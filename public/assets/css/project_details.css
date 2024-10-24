@@ -1,0 +1,730 @@
+/*
+========================
+GOBAL CSS START
+========================
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+    font-family: bagea;
+    src: url(webfonts/Bagea.ttf);
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: ultra-condensed;
+    unicode-range: U+0020-2044
+}
+
+:root {
+    --font-2: bagea;
+}
+
+body {
+    font-family: "Urbanist", system-ui;
+    font-size: 16px;
+    font-weight: 400;
+    background: #fff;
+    color: #333333;
+    padding: 10px !important;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s all ease;
+    -webkit-transition: 0.2s all ease;
+    -moz-transition: 0.2s all ease;
+}
+
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+::selection {
+    color: white;
+    background: #B6892C;
+}
+
+::-webkit-selection {
+    color: white;
+    background: #B6892C;
+}
+
+::-moz-selection {
+    color: white;
+    background: #B6892C;
+}
+
+.scrolltotop {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background: #B6892C;
+    text-align: center;
+    font-size: 22px;
+    color: #ffffff;
+    position: fixed;
+    right: 30px;
+    bottom: 25px;
+    display: none;
+    animation: lab_top_up 5s linear infinite;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.scrolltotop i {
+    color: #ffff;
+}
+
+@keyframes lab_top_up {
+    0% {
+        transform: translateY(-15px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
+.pluse,
+.pluse2 {
+    position: relative;
+    top: 10px;
+    left: -8px;
+    z-index: -1;
+}
+
+.pluse::before,
+.pluse2::before {
+    width: 40px;
+    height: 40px;
+}
+
+.pluse::after,
+.pluse::before,
+.pluse2::after,
+.pluse2::before {
+    background: #B6892C;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    display: block;
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 0;
+}
+
+.pluse::after,
+.pluse2::after {
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    margin-left: -15px;
+    margin-top: -15px;
+}
+
+.pluse::before {
+    -webkit-animation: pluse_animate 2.5s infinite linear;
+    animation: pluse_animate 2.5s infinite linear;
+}
+
+.pluse2::before {
+    -webkit-animation: pluse_animate 3s infinite linear;
+    animation: pluse_animate 3s infinite linear;
+}
+
+@keyframes pluse_animate {
+    0% {
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%) scale(0.3);
+        transform: translate(-50%, -50%) scale(0.3);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate(-50%, -50%) scale(2);
+        transform: translate(-50%, -50%) scale(2);
+    }
+}
+
+/*===============
+ GOBAL CSS END
+ ============== */
+
+/*======= header area style start hare ======= */
+
+.header-area {
+    height: 100vh;
+    border-radius: 40px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(images/header-bg.jfif) lightgray 50% / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.group-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.action-btn a {
+    display: flex;
+    padding: 5px 14px 5px 14px;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    border-radius: 50px;
+    background: #F1F0EB;
+    color: #B6892C;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    transition: 0.3s;
+}
+
+.action-btn a:hover {
+    background: #B6892C;
+    color: #fff;
+}
+
+.action-btn a:hover i {
+    color: #fff;
+}
+
+.action-btn a .icon {
+    width: 43px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 60px;
+    background: rgba(182, 137, 44, 0.10);
+}
+
+.action-btn a i {
+    color: #000;
+    transition: 0.3s;
+}
+
+.action-btn a.location-btn {
+    width: auto;
+    gap: 10px;
+}
+
+.header-middle {
+    width: 392px;
+    max-width: 100%;
+}
+
+.header-middle p {
+    color: #FFF;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    text-transform: uppercase;
+}
+
+.header-middle h2 {
+    color: #FFF;
+    text-align: center;
+    font-family: var(--font-2);
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 42px;
+    margin: 40px 0;
+}
+
+.action-btn a.live-in-btn {
+    gap: 10px;
+    width: auto;
+}
+
+.header-middle .action-btn {
+    display: inline-block;
+}
+
+.action-btn .download-btn {
+    background: #fff;
+    color: #000;
+}
+
+.action-btn .download-btn .icon {
+    background: transparent;
+}
+
+.action-btn .download-btn .icon i {
+    color: #B6892C;
+}
+
+.action-btn .download-btn:hover i {
+    color: #fff;
+}
+
+/*======= header area style end hare ======== */
+
+/*====== dream home area style start hare ==== */
+
+.dream-home-area {
+    padding: 160px 0;
+}
+
+.dream-home-content>h2 {
+    font-family: var(--font-2);
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 42px;
+}
+
+.dream-home-content p {
+    padding: 20px 0;
+    line-height: 24px;
+    text-transform: capitalize;
+}
+
+.dream-inner-box .sr-inner-cnt h2 {
+    color: #B6892C;
+    text-align: center;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+}
+
+.dream-inner-box .sr-inner-cnt p {
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+}
+
+.dream-home-btn .action-btn {
+    display: inline-block;
+}
+
+.dream-home-btn .action-btn a {
+    background: #fff;
+    border: 1px solid #333;
+}
+
+.dream-home-btn .action-btn a:hover {
+    background: #B6892C;
+    border-color: #B6892C;
+}
+
+/*====== dream home area style end hare ====== */
+
+/*====== beverly area style start hare ===== */
+
+.beverly-content h2 {
+    font-family: var(--font-2);
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+}
+
+.beverly-content h4 {
+    padding: 20px 0;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    text-transform: capitalize;
+}
+
+.beverly-content p {
+    text-transform: lowercase;
+    padding-bottom: 20px;
+}
+
+.beverly-content p:last-child {
+    padding-bottom: 0;
+}
+
+/*===== beverly area style end hare ====== */
+
+/*==== elegence area style start hare ======= */
+
+.elegence-area {
+    padding: 30px 0;
+}
+
+.elegence-wapper h2 {
+    font-family: var(--font-2);
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 42px;
+}
+
+.elegence-wapper p {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    padding-top: 20px;
+}
+
+.elegence-gallery-box {
+    padding-top: 80px;
+}
+
+/*====== elegence area style end hare ======= */
+
+/*====== lifestyle area style start hare ====== */
+
+.lifestyle-wapper h2 {
+    font-family: var(--font-2);
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 42px;
+}
+
+.lifestyle-wapper p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    padding-top: 10px;
+}
+
+.lifestyle-list {
+    padding-top: 40px;
+}
+
+.lifestyle-list-block {
+    width: 19%;
+    flex-basis: 19%;
+}
+
+.lifestyle-list-block ul li .text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    width: 83%;
+}
+
+.lifestyle-list-block ul li {
+    margin-bottom: 20px;
+}
+
+/*====== lifestyle area style end hare ======= */
+
+/*====== new home area style start hare ======== */
+
+.new-home-area {
+    padding: 160px 0;
+}
+
+.new-home-area .bg-color {
+    background: #F1F0EB;
+}
+
+.new-home-content h2 {
+    font-family: var(--font-2);
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 42px;
+    /* 100% */
+}
+
+.new-home-content p {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 40px 0;
+}
+
+.new-home-btn .action-btn {
+    display: inline-block;
+}
+
+.new-home-btn .action-btn a {
+    background: #333;
+}
+
+.new-home-btn .action-btn a .icon {
+    background: #fff;
+}
+
+.new-home-btn .action-btn a:hover {
+    background: #B6892C;
+}
+
+.new-home-btn .action-btn a:hover i {
+    color: #B6892C;
+}
+
+/*======= new home area style end hare ====== */
+
+/*===== floor plan area style start hare ======= */
+
+.floor-plan-top h2 {
+    font-size: 42px;
+    font-weight: 400;
+    font-family: var(--font-2);
+    line-height: 42px;
+}
+
+.floor-plan-top p {
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    padding-top: 10px;
+}
+
+.floor-menu {
+    padding-top: 40px;
+}
+
+.floor-menu ul li a {
+    line-height: 24px;
+    font-size: 26px;
+}
+
+.floor-menu ul li:last-child a {
+    text-decoration: underline;
+}
+
+.footer-img-1 {
+    flex-basis: 40%;
+}
+
+.footer-plan-img {
+    padding: 60px 0;
+}
+
+.footer-img-2 {
+    flex-basis: 60%;
+}
+
+.footer-plan-img {
+    gap: 40px;
+}
+
+.unit-area {
+    gap: 40px;
+    padding-bottom: 60px;
+}
+
+.unit-block h4 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.unit-block p {
+    font-size: 20px;
+    line-height: 24px;
+    padding-top: 10px;
+}
+
+.floor-imgs h4 {
+    font-family: var(--font-2);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/*====== floor plan area style end hare ===== */
+
+/*==== payment plan area style start hare ====== */
+
+.payment-plan-area {
+    padding: 160px 0;
+}
+
+.payment-plan-area h2 {
+    font-family: var(--font-2);
+}
+
+.payment-plan-area p {
+    padding-top: 10px;
+}
+
+.payment-percen {
+    gap: 20px;
+    padding-top: 40px;
+}
+
+.payment-block {
+    width: 400px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.30);
+}
+
+/*==== payment plan area style end hare ====== */
+
+/*==== luxurious area style start hare ====== */
+
+.luxurious-wapper h2 {
+    font-family: var(--font-2);
+    font-weight: 400;
+    font-size: 42px;
+}
+
+.luxurious-wapper p {
+    padding-top: 15px;
+    font-size: 16px;
+}
+
+.luxurious-map {
+    padding-top: 40px;
+}
+
+/*==== luxurious area style end hare ====== */
+
+/*===== get in touch area style start hare ===== */
+
+.contact-area {
+    padding: 160px 0;
+}
+
+.contact-form-area h3 {
+    padding-top: 20px;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.contact-form-area h4 {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px 0;
+}
+
+.contact-form label {
+    display: block;
+}
+
+.contact-form input,
+.contact-form select {
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.contact-form select {
+    background: transparent;
+    color: rgba(0, 0, 0, 0.50);
+}
+
+.contact-form button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    background: var(--Color-2, #333);
+    padding: 14px 20px;
+    color: #F1F0EB;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: #B6892C;
+}
+
+.contact-img {
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.contact-img img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact-form-area p {
+    padding-bottom: 10px;
+}
+
+/*====== get in touch area style end hare ======== */
+
+/*====== footer copyright area style start hare ======= */
+
+.footer-copyright {
+    padding: 15px 0;
+}
+
+.copyright-area a img {
+    width: 225px;
+}
+
+/*====== modal css start hare ===== */
+
+.modal-header.border-none {
+    border-bottom: none;
+}
+
+.popup-one {
+    max-width: 1200px;
+}
+
+.popup-contact h2 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 42px;
+    padding-top: 20px;
+}
+
+.popup-contact h4 {
+    font-weight: 700;
+}
+
+.modal-img {
+    height: 100%;
+}
+
+.modal-img img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.modal-body {
+    padding-bottom: 45px;
+}

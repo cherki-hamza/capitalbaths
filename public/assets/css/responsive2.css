@@ -1,0 +1,521 @@
+@media screen and (min-width: 1600px) {
+    .container {
+        max-width: 1440px;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+    .dream-home-content>h2 {
+        font-size: 35px;
+    }
+    .dream-inner-box.mt-4 {
+        margin-top: 10px !important;
+    }
+    .dream-inner-box .sr-inner-cnt h2 {
+        font-size: 27px;
+    }
+    .dream-inner-box .sr-inner-cnt p {
+        font-size: 21px;
+    }
+    .popup-one {
+        max-width: 95%;
+    }
+}
+
+/*
+====================================
+Medium Screen - Others
+====================================
+*/
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .dream-home-content>h2 {
+        font-size: 26px;
+    }
+    .dream-inner-box.mt-4 {
+        margin-top: 10px !important;
+    }
+    .dream-inner-box .sr-inner-cnt h2 {
+        font-size: 23px;
+    }
+    .dream-inner-box .sr-inner-cnt p {
+        font-size: 18px;
+        padding: 10px 0;
+    }
+    .dream-home-content p {
+        padding: 15px 0;
+    }
+    .new-home-area {
+        padding: 100px 0;
+    }
+    .floor-menu ul li a {
+        font-size: 22px;
+    }
+    .popup-one {
+        max-width: 95%;
+    }
+}
+
+/*
+====================================
+Small Screen - Tablate
+====================================
+*/
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .header-top-action .action-btn a .text {
+        display: none;
+    }
+    .header-top-action .action-btn a {
+        padding: 0;
+    }
+    .dream-home-area {
+        padding: 80px 0;
+    }
+    .dream-home-content>h2 {
+        font-size: 30px;
+    }
+    .beverly-content h2 {
+        font-size: 30px;
+    }
+    .lifestyle-list {
+        flex-wrap: wrap;
+    }
+    .lifestyle-list-block {
+        width: 50%;
+        flex-basis: 50%;
+    }
+    .elegence-wapper h2 {
+        font-size: 30px;
+    }
+    .lifestyle-wapper h2 {
+        font-size: 30px;
+    }
+    .new-home-content h2 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    .new-home-content p {
+        font-size: 20px;
+        padding: 15px 0;
+    }
+    .new-home-area {
+        padding: 70px 0;
+    }
+    .floor-plan-top h2 {
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .floor-menu ul li a {
+        font-size: 22px;
+    }
+    .footer-plan-img {
+        padding: 45px 0;
+    }
+    .contact-area {
+        padding: 80px 0;
+    }
+    .contact-form-area h3 {
+        padding-top: 10px;
+        font-size: 30px;
+    }
+    .contact-form-area img {
+        width: 250px;
+    }
+    .popup-logo img {
+        width: 250px;
+    }
+    .popup-contact h2 {
+        font-size: 30px;
+        line-height: 40px;
+        padding-top: 10px;
+    }
+    .popup-contact h4 {
+        font-size: 16px;
+        padding: 5px 0;
+    }
+    .popup-contact p {
+        padding-bottom: 10px;
+    }
+    .popup-one {
+        max-width: 95%;
+    }
+    .payment-plan-area {
+        padding: 80px 0;
+    }
+    .elegence-area {
+        padding: 80px 0;
+    }
+    .elegence-gallery-box {
+        padding-top: 60px;
+    }
+}
+
+/*
+====================================
+Small Screen - Mobile
+====================================
+*/
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .header-top-action .action-btn a .text {
+        display: none;
+    }
+    .header-top-action .action-btn a {
+        padding: 0;
+    }
+    .header-buttom .group-btn {
+        flex-direction: column;
+    }
+    .download-btn br {
+        display: none;
+    }
+    .header-middle .action-btn a,
+    .header-buttom .action-btn a {
+        width: 50%;
+        max-width: 50%;
+        justify-content: space-between;
+    }
+    .header-middle .action-btn {
+        display: block;
+        order: 3;
+    }
+    .header-middle {
+        width: 100%;
+        max-width: 100%;
+    }
+    .header-middle {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .header-middle p {
+        order: 2;
+        margin-bottom: 20px;
+        font-size: 22px;
+    }
+    .header-middle h2 {
+        margin: 20px 0;
+        font-size: 30px;
+    }
+    .dream-home-area {
+        padding: 60px 0;
+    }
+    .dream-home-content>h2 {
+        font-size: 22px;
+    }
+    .dream-inner-box.mt-4 {
+        margin-top: 10px !important;
+    }
+    .dream-inner-box .sr-inner-cnt h2 {
+        font-size: 23px;
+    }
+    .dream-inner-box .sr-inner-cnt p {
+        font-size: 18px;
+        padding: 10px 0;
+    }
+    .dream-home-content p {
+        padding: 15px 0;
+    }
+    .beverly-content h2 {
+        font-size: 25px;
+    }
+    .beverly-content h4 {
+        padding: 15px 0;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .lifestyle-list {
+        flex-wrap: wrap;
+    }
+    .lifestyle-list-block {
+        width: 50%;
+        flex-basis: 50%;
+    }
+    .elegence-wapper h2 {
+        font-size: 25px;
+        line-height: 25px;
+    }
+    .lifestyle-wapper h2 {
+        font-size: 26px;
+        line-height: 30px;
+    }
+    .new-home-content h2 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    .new-home-content p {
+        font-size: 20px;
+        padding: 15px 0;
+    }
+    .new-home-area {
+        padding: 50px 0;
+    }
+    .floor-plan-top h2 {
+        font-size: 26px;
+        line-height: 26px;
+    }
+    .floor-menu ul li a {
+        font-size: 18px;
+    }
+    .footer-plan-img {
+        padding: 45px 0;
+    }
+    .new-home-content.py-3 {
+        padding-top: 30px !important;
+    }
+    .elegence-area {
+        padding: 50px 0;
+    }
+    .contact-area {
+        padding: 50px 0;
+    }
+    .contact-form-area h3 {
+        padding-top: 10px;
+        font-size: 30px;
+    }
+    .contact-form-area img {
+        width: 250px;
+    }
+    .payment-plan-area {
+        padding: 50px 0;
+    }
+    .luxurious-wapper h2 {
+        font-size: 30px;
+    }
+    .copyright-area {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .popup-logo img {
+        width: 250px;
+    }
+    .popup-contact h2 {
+        font-size: 30px;
+        line-height: 40px;
+        padding-top: 10px;
+    }
+    .popup-contact h4 {
+        font-size: 16px;
+        padding: 5px 0;
+    }
+    .popup-contact p {
+        padding-bottom: 10px;
+    }
+    .popup-one {
+        max-width: 95%;
+    }
+    .elegence-gallery-box {
+        padding-top: 50px;
+    }
+}
+
+/*
+====================================
+Xtra Small Screen - Small Mobile
+====================================
+*/
+
+@media screen and (max-width: 576px) {
+    .header-area {
+        border-radius: 15px;
+    }
+    .header-top-action .action-btn a .text {
+        display: none;
+    }
+    .header-top-action .action-btn a {
+        padding: 0;
+    }
+    .header-buttom .group-btn {
+        flex-direction: column;
+    }
+    .download-btn br {
+        display: none;
+    }
+    .header-middle .action-btn a,
+    .header-buttom .action-btn a {
+        width: 80%;
+        max-width: 80%;
+        justify-content: space-between;
+    }
+    .header-middle .action-btn {
+        display: block;
+        order: 3;
+    }
+    .header-middle {
+        width: 100%;
+        max-width: 100%;
+    }
+    .header-middle {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .header-middle p {
+        order: 2;
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+    .header-middle h2 {
+        margin: 20px 0;
+        font-size: 30px;
+    }
+    .header-top-action .group-btn {
+        flex-direction: column;
+        align-items: end;
+    }
+    body {
+        padding: 0 !important;
+    }
+    .dream-home-area {
+        padding: 40px 0;
+    }
+    .dream-home-content>h2 {
+        font-size: 26px;
+        line-height: 36px;
+    }
+    .dream-inner-box.mt-4 {
+        margin-top: 10px !important;
+    }
+    .dream-inner-box .sr-inner-cnt h2 {
+        font-size: 26px;
+        text-align: left;
+    }
+    .dream-inner-box .sr-inner-cnt p {
+        font-size: 18px;
+        padding: 10px 0;
+        text-align: left;
+    }
+    .dream-home-content p {
+        padding: 15px 0;
+    }
+    .beverly-content h2 {
+        font-size: 26px;
+    }
+    .beverly-content h4 {
+        padding: 15px 0;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .dream-home-btn.mt-3.text-end {
+        text-align: left !important;
+    }
+    .elegence-wapper h2 {
+        font-size: 26px;
+        line-height: 34px;
+    }
+    .lifestyle-list {
+        flex-wrap: wrap;
+    }
+    .lifestyle-list-block {
+        flex-basis: 100%;
+    }
+    .lifestyle-wapper h2 {
+        font-size: 25px;
+        line-height: 34px;
+    }
+    .elegence-wapper h2 {
+        font-size: 25px;
+        line-height: 25px;
+    }
+    .lifestyle-wapper h2 {
+        font-size: 26px;
+        line-height: 30px;
+    }
+    .new-home-content h2 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    .new-home-content p {
+        font-size: 20px;
+        padding: 15px 0;
+    }
+    .new-home-area {
+        padding: 40px 0;
+    }
+    .floor-plan-top h2 {
+        font-size: 26px;
+        line-height: 26px;
+    }
+    .floor-menu ul li a {
+        font-size: 14px;
+    }
+    .footer-plan-img {
+        padding: 35px 0;
+        flex-wrap: wrap;
+    }
+    .new-home-content.py-3 {
+        padding-top: 30px !important;
+    }
+    .floor-menu {
+        padding-top: 20px;
+    }
+    .footer-img-1 {
+        flex-basis: 100%;
+    }
+    .footer-img-2 {
+        flex-basis: 100%;
+    }
+    .unit-block h4 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .unit-block p {
+        font-size: 16px;
+        line-height: 23px;
+        padding-top: 7px;
+    }
+    .floor-imgs h4 {
+        font-size: 16px;
+        text-align: center;
+    }
+    .payment-plan-area {
+        padding: 40px 0;
+    }
+    .payment-percen {
+        flex-wrap: wrap;
+    }
+    .elegence-area {
+        padding: 40px 0;
+    }
+    .luxurious-wapper h2 {
+        font-size: 26px;
+    }
+    .contact-area {
+        padding: 30px 0;
+    }
+    .contact-form-area h3 {
+        padding-top: 10px;
+        font-size: 25px;
+    }
+    .contact-form-area img {
+        width: 200px;
+    }
+    .copyright-area {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .popup-logo img {
+        width: 220px;
+    }
+    .popup-contact h2 {
+        font-size: 26px;
+        line-height: 30px;
+        padding-top: 10px;
+    }
+    .popup-contact h4 {
+        font-size: 16px;
+        padding: 5px 0;
+    }
+    .popup-contact p {
+        padding-bottom: 10px;
+    }
+    .popup-one {
+        max-width: 95%;
+    }
+    .elegence-gallery-box {
+        padding-top: 30px;
+    }
+}

@@ -1,0 +1,580 @@
+/*============================================================================================*/
+/* Your custom styles below */
+/*============================================================================================*/
+
+
+/* start custom style */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.category-card {
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.category-card img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    border-radius: 0;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.category-card p {
+    /*font-size: 18px;
+    font-weight: 600;*/
+    color: #333;
+    margin: 15px 0;
+}
+
+.shop-now-btn {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 8px 15px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #42a5f5, #478ed1);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    transition: background 0.3s ease;
+    box-shadow: 0px 4px 12px rgba(66, 165, 245, 0.5);
+}
+
+.shop-now-btn:hover {
+    background: linear-gradient(135deg, #478ed1, #42a5f5);
+    box-shadow: 0px 6px 15px rgba(66, 165, 245, 0.75);
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.category-card:hover img {
+    transform: scale(1.05);
+}
+
+.category-title-wrapper {
+    display: flex;
+    justify-content: center; /* Centers the text horizontally */
+    margin-bottom: 50px;
+}
+
+.category-title {
+    font-size: 36px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #42a5f5, #478ed1, #42a5f5);
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    display: inline-block;
+    padding: 10px;
+}
+
+  /* Gradient Heading Styling */
+  .section-title-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #42a5f5, #478ed1, #42a5f5);
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    display: inline-block;
+    padding: 10px;
+}
+
+.blue_gradian{
+    background: linear-gradient(135deg, #42a5f5, #478ed1, #42a5f5);
+}
+
+/* Featured Collection Card Design */
+.collection-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.collection-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.collection-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.collection-card:hover img {
+    transform: scale(1.05);
+    border-bottom: 3px solid #478ed1;
+}
+
+.collection-card p {
+    font-size: 16px;
+    /*font-weight: 600;*/
+    color: #333;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .collection-card img {
+        height: 150px;
+    }
+}
+
+#wrap {
+    padding: 30px 0;
+  }
+
+  .review-title {
+    margin-bottom: 30px;
+  }
+
+  .review-card--option-1 {
+    border: 1px solid #d8d8d8;
+    padding: 25px;
+  }
+  .review-card--option-2 {
+    padding: 0 15px;
+  }
+  .review-card--option-3 {
+    padding: 0 200px;
+  }
+  .review-card--option-4 {
+    padding: 30px;
+  }
+  .review-card .review-card-img {
+    border: 1px solid #eee;
+    width: 100px;
+    height: 70px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 0 auto 15px;
+  }
+  .review-card .review-author .ra-author {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .review-card .review-author .ra-rating-star {
+    margin: 0 0 15px;
+    padding: 0;
+    list-style-type: none;
+  }
+  .review-card .review-author .ra-rating-star li {
+    display: inline-block;
+    margin: 0 -2px;
+  }
+  .review-card--option-4 {
+    border: 1px solid #d8d8d8;
+  }
+
+  .carousel-wrap {
+    width: 635px;
+    height: 323px;
+    margin: 0 auto;
+    position: relative;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .carousel-wrap {
+      width: 400px;
+    }
+  }
+  @media (max-width: 767px) {
+    .carousel-wrap {
+      width: 350px;
+      height: 345px;
+    }
+  }
+  @media (max-width: 480px) {
+    .carousel-wrap {
+      width: 240px;
+      height: 408px;
+    }
+  }
+
+  .carousel > li {
+    width: 500px;
+    height: 325px;
+    background: #fff;
+    display: inline-block;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .carousel > li {
+      width: 400px;
+    }
+  }
+  @media (max-width: 767px) {
+    .carousel > li {
+      width: 350px;
+      height: 345px;
+    }
+  }
+  @media (max-width: 480px) {
+    .carousel > li {
+      width: 240px;
+      height: 408px;
+    }
+  }
+
+  .items {
+    position: absolute;
+  }
+
+  .main-pos {
+    margin-left: 2em !important;
+    z-index: 3000;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .main-pos {
+      margin-left: -40px !important;
+    }
+  }
+  @media (max-width: 767px) {
+    .main-pos {
+      margin-left: -40px !important;
+    }
+  }
+
+  .left-pos {
+    background: #ccc;
+    opacity: 0.5;
+    margin-left: -17em !important;
+    z-index: 1000;
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    transform: scale(0.75);
+  }
+  .left-pos .review-card--option-4 {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .left-pos {
+      margin-left: -220px !important;
+    }
+  }
+  @media (max-width: 767px) {
+    .left-pos {
+      margin-left: -113px !important;
+    }
+  }
+  @media (max-width: 480px) {
+    .left-pos {
+      margin-left: -145px !important;
+    }
+  }
+
+  .back-pos {
+    opacity: 0.05;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+
+  .right-pos {
+    opacity: 0.5;
+    margin-left: 21em !important;
+    z-index: 1000;
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    transform: scale(0.75);
+  }
+  .right-pos .review-card--option-4 {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .right-pos {
+      margin-left: 140px !important;
+    }
+  }
+  @media (max-width: 767px) {
+    .right-pos {
+      margin-left: 30px !important;
+    }
+  }
+  @media (max-width: 480px) {
+    .right-pos {
+      margin-left: 62px !important;
+    }
+  }
+
+  .slider {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+  }
+  .slider a {
+    color: #999;
+  }
+  .slider i {
+    font-size: 45px;
+  }
+  .slider #prev,
+  .slider #next {
+    position: absolute;
+  }
+  .slider #prev {
+    left: -214px;
+    top: -60px;
+  }
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .slider #prev {
+      left: -180px;
+    }
+  }
+  @media (max-width: 767px) {
+    .slider #prev {
+      left: -70px;
+    }
+  }
+  .slider #next {
+    right: -214px;
+    top: -60px;
+  }
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .slider #next {
+      right: -180px;
+    }
+  }
+  @media (max-width: 767px) {
+    .slider #next {
+      right: -70px;
+    }
+  }
+  @media (max-width: 480px) {
+    .slider {
+      display: none;
+    }
+  }
+
+  .instagram-feed {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .feed-item {
+    position: relative;
+    width: calc(20% - 10px);
+    margin: 10px 0;
+  }
+
+  .feed-item img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .feed-caption {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .feed-item {
+      width: calc(50% - 10px);
+    }
+  }
+
+  @media (max-width: 576px) {
+    .feed-item {
+      width: calc(100% - 10px);
+    }
+  }
+
+/* end the custom style */
+
+@media (max-width: 700px) {
+
+  .capithalbaths_responsive{
+    display: none;
+  }
+}
+
+/* style for home page */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.main-menu ul>li.submenu>a:after {
+  color: black;
+}
+
+/* style for menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dropdown-toggle img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 50px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.dropdown-menu a {
+  padding: 8px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-menu a:hover {
+  background-color: #ddd;
+}
+
+.dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* style for scrolbar  */
+::-webkit-scrollbar {
+  width: 12px;
+  /* Change width for vertical scrollbars */
+  height: 12px;
+  /* Change height for horizontal scrollbars */
+}
+
+/* For the track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* For the thumb (the part you can drag) */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+/* For the thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* desktop and responsive menu */
+.showrooms_desktop {
+  margin-left: 102px !important;
+  float: unset;
+  position: absolute;
+  margin-left: -92px;
+  margin-top: 19px;
+  text-decoration: none;
+  color: black;
+}
+@media (max-width: 700px) {
+
+  .capithalbaths_responsive {
+    display: none;
+  }
+
+  #showrooms_mobile {
+    left: -91px;
+    font-size: 18px;
+    top: -9px;
+  }
+
+  .mobile_category {
+    display: none !important;
+  }
+}
+
+/* start style for brand page */
+.brand-card {
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+  height: 150px; /* Set a fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brand-card:hover {
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+.brand-card img {
+  max-width: 80%; /* Adjust the logo size */
+  max-height: 100px; /* Ensure the image fits well */
+  object-fit: contain;
+}
+.brand-card .brand-icon {
+  margin-top: 10px;
+  font-size: 24px;
+}
+.brand-section {
+  padding: 50px 0;
+}
+
+.brand_no_color{
+  text-decoration: none;
+  color: black;
+}
+/* end style for brand page */

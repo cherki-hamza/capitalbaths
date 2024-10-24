@@ -1,0 +1,45 @@
+.tox-tinymce{
+    height: 370px !important;
+}
+
+textarea{
+    height: 370px !important;
+}
+
+.my_purple {
+    color: rgba(137, 43, 226, 0.792);
+}
+
+.my_color1 {
+    color: rgba(225, 20, 177, 0.792);
+}
+
+.gold {
+    color: gold;
+}
+
+.brown {
+    color: brown
+}
+
+td img{
+  width: 80px !important;
+  height: 100px;
+}
+
+/* .colors_icon {
+    display: inline-block;
+    background-image: url('../img/icons/color-palett.svg');
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    padding-left: 10px;
+} */
+
+.colors_icon {
+    background-image: url('../img/icons/color-palett.svg') !important;
+    font-size: 36px;
+    left: 25px;
+    margin-right: 10px;
+    position: absolute;
+    top: 30px;
+}

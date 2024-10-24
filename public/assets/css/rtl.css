@@ -1,0 +1,90 @@
+body{
+    direction: rtl;
+}
+
+html, body {
+    overflow-x: hidden;
+  }
+
+.en_max_style{
+    max-width: 1600px;
+}
+
+.ar_logo{
+    position: absolute;
+    top: 16px;
+    margin-right: 86px;
+}
+
+li.mobile_menu{
+    margin-right: 130px;
+}
+
+
+
+
+
+#showrooms{
+    direction: ltr;
+    margin-right: 98px;
+}
+
+
+/* button searsh style */
+header .main_nav .custom-search-input button[type='submit'] {
+        right: auto;
+        left: 4px;
+}
+
+/* .ar_menu_ul{
+    margin-right: 128px !important;
+} */
+
+
+/* Optional: Hide class for mobile screens */
+@media (min-width: 800px) {
+    /* .ar_menu_ul{
+        margin-right: 128px !important;
+    } */
+
+    #logo{
+        position: absolute;
+        right: 255px;
+    }
+
+    .ar_menu_ul{
+        margin-right: 128px !important;
+    }
+
+    .lang_position{
+        margin-left: 168px
+    }
+
+  }
+
+
+  @media (max-width: 767px) {
+    header ul.top_tools {
+        width: 100%;
+  }
+
+
+
+}
+
+@media (max-width: 767px) {
+    header ul.top_tools {
+        margin-right: -100px;
+    }
+
+}
+
+/* start menu responsive */
+
+@media (max-width: 800px) {
+.en_lang_position{
+    margin-left: -25px;
+}
+}
+
+
