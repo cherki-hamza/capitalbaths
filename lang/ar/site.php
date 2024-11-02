@@ -55,4 +55,6 @@ return [
     "latest_project" => "أحدث المشاريع",
     "project_desc" => "سكنية، فندقية، تجارية، مؤسسية والمزيد.",
 
+    "project_gallery" => "صور المشروع",
+
 ];

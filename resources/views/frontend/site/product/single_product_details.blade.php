@@ -111,16 +111,13 @@
 									<label class="col-xl-5 col-lg-5  col-md-6 col-6 pt-0"><strong style="font-size: 16px;font-weight: 600;">Color:</strong></label>
 									<div class="col-xl-8 col-lg-8 col-md-8 col-8 colors">
 										<ul>
-											<li><a style="background-color: #4C6457;" href="#0"
-													class="color color_1 active"></a></li>
-											<li><a style="background-color: #D8A7A2;" href="#0"
-													class="color color_2"></a></li>
-											<li><a style="background-color: #46454A;" href="#0"
-													class="color color_3"></a></li>
-											<li><a style="background-color: #B9B4B1;" href="#0"
-													class="color color_4"></a></li>
-											<li><a style="background-color: white;border: black solid 1px;color:black"
-													href="#0" class="color color_4"></a></li>
+											@foreach ($colors as $color)
+											<li>
+                                                <a style="background-color: {{$color->hex_code}};border:solid 1px black" href="#0"
+													class="color">
+                                                </a>
+                                            </li>
+											@endforeach
 										</ul>
 									</div>
 								</div>
@@ -268,18 +265,12 @@
                                                     Select Color
                                                 </span>
                                                 <ul class="dropdown" style="display: none;">
-                                                    <li data-color="light-pink" data-bg-color="#D8A7A2">
-                                                        <span class="color-box" style="background-color: #D8A7A2;"></span>Light Pink
-                                                    </li>
-                                                    <li data-color="gray-green" data-bg-color="#4C6457">
-                                                        <span class="color-box" style="background-color: #4C6457;"></span>Gray Green
-                                                    </li>
-                                                    <li data-color="dark-gray" data-bg-color="#46454A">
-                                                        <span class="color-box" style="background-color: #46454A;"></span>Dark Gray
-                                                    </li>
-                                                    <li data-color="black" data-bg-color="black">
-                                                        <span class="color-box" style="background-color: black;"></span>Black
-                                                    </li>
+                                                    @foreach ($colors as $color)
+                                                        <li data-color="light-pink" data-bg-color="{{$color->hex_code}}">
+                                                            <span class="color-box" style="background-color: {{$color->hex_code}};border:solid 1px black"></span>
+                                                            <span class="float-right">{{$color->name}}</span>
+                                                        </li>
+                                                    @endforeach
                                                 </ul>
                                             </div>
                                         </div>

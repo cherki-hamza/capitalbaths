@@ -5,6 +5,8 @@
 
 	<title>@yield('title')</title>
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 	<!-- Favicons-->
 	<link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}" type="image/x-icon">
 	<link rel="apple-touch-icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
@@ -56,7 +58,12 @@
         .main-menu ul>li.submenu>a:after {
             color: black !important;
         }
+
+        .mobile_category{
+            display: none;
+        }
     </style>
+
 
 </head>
 

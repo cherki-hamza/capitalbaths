@@ -54,40 +54,36 @@
 					<div class="countdown"></div>
 				</div>
 				<div class="row">
+
+                    @php
+                        $images = json_decode($product->images);
+                    @endphp
+
+
+
 					<div class="col-md-6">
 						<div class="all">
 							<div class="slider">
 								<div class="owl-carousel owl-theme main">
-									<div style="background-image: url(https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit29.jpg);"
-										class="item-box"></div>
-									<div style="background-image: url(https://capitalbaths.com/wp-content/uploads/2023/11/porcelain-counter01.webp);"
-										class="item-box"></div>
-									<div style="background-image: url(https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit41.jpg);"
-										class="item-box"></div>
-									<div style="background-image: url(https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit40.jpg);"
-										class="item-box"></div>
-									<div style="background-image: url(https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit32.jpg);"
-										class="item-box"></div>
-									<div style="background-image: url(https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit17-1.jpg);"
-										class="item-box"></div>
+
+                                    @foreach ($images as $image)
+                                        <div style="background-image: url({{ Voyager::image($image) }});" class="item-box">
+                                        </div>
+                                    @endforeach
+
+
+
 								</div>
 								<div class="left nonl"><i class="ti-angle-left"></i></div>
 								<div class="right"><i class="ti-angle-right"></i></div>
 							</div>
 							<div class="slider-two">
 								<div class="owl-carousel owl-theme thumbs">
-									<div style="background-image: url(https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit29.jpg);"
-										class="item active"></div>
-									<div style="background-image: url(https://capitalbaths.com/wp-content/uploads/2023/11/porcelain-counter01.webp);"
-										class="item"></div>
-									<div style="background-image: url(https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit41.jpg);"
-										class="item"></div>
-									<div style="background-image: url(https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit40.jpg);"
-										class="item"></div>
-									<div style="background-image: url(https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit32.jpg);"
-										class="item"></div>
-									<div style="background-image: url(https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit17-1.jpg);"
-										class="item"></div>
+                                    @foreach ($images as $image)
+                                        <div style="background-image: url({{ Voyager::image($image) }});" class="item active">
+                                        </div>
+                                    @endforeach
+
 								</div>
 								<div class="left-t nonl-t"></div>
 								<div class="right-t"></div>
@@ -99,12 +95,12 @@
 						<div class="breadcrumbs">
 							<ul>
 								<li><a href="#">Category</a></li>
-								<li><a href="#">Porcelain Counter</a></li>
+								<li><a href="#">{{ $product->category->name }}</a></li>
 							</ul>
 						</div>
 						<!-- /page_header -->
 						<div class="prod_info">
-							<h1>M-Line Back to Wall Rimless WC</h1>
+							<h1>{{ $product->getTranslatedAttribute('name') }}</h1>
 
 							<!-- <p><small>SKU: MTKRY-001</small><br> Koy Rimless Wall Mounted WC with Soft Close Slim Seat
 								and Cover</p> -->
@@ -113,16 +109,13 @@
 									<label class="col-xl-5 col-lg-5  col-md-6 col-6 pt-0"><strong style="font-size: 16px;font-weight: 600;">Color:</strong></label>
 									<div class="col-xl-8 col-lg-8 col-md-8 col-8 colors">
 										<ul>
-											<li><a style="background-color: #4C6457;" href="#0"
-													class="color color_1 active"></a></li>
-											<li><a style="background-color: #D8A7A2;" href="#0"
-													class="color color_2"></a></li>
-											<li><a style="background-color: #46454A;" href="#0"
-													class="color color_3"></a></li>
-											<li><a style="background-color: #B9B4B1;" href="#0"
-													class="color color_4"></a></li>
-											<li><a style="background-color: white;border: black solid 1px;color:black"
-													href="#0" class="color color_4"></a></li>
+                                            @foreach ($colors as $color)
+											<li>
+                                                <a style="background-color: {{$color->hex_code}};border:solid 1px black" href="#0"
+													class="color">
+                                                </a>
+                                            </li>
+											@endforeach
 										</ul>
 									</div>
 								</div>
@@ -382,18 +375,12 @@
 															Select Color
 														</span>
 														<ul class="dropdown" style="display: none;">
-															<li data-color="light-pink" data-bg-color="#D8A7A2">
-																<span class="color-box" style="background-color: #D8A7A2;"></span>Light Pink
-															</li>
-															<li data-color="gray-green" data-bg-color="#4C6457">
-																<span class="color-box" style="background-color: #4C6457;"></span>Gray Green
-															</li>
-															<li data-color="dark-gray" data-bg-color="#46454A">
-																<span class="color-box" style="background-color: #46454A;"></span>Dark Gray
-															</li>
-															<li data-color="black" data-bg-color="black">
-																<span class="color-box" style="background-color: black;"></span>Black
-															</li>
+                                                            @foreach ($colors as $color)
+                                                                <li data-color="light-pink" data-bg-color="{{$color->hex_code}}">
+                                                                    <span class="color-box" style="background-color: {{$color->hex_code}};border:solid 1px black"></span>
+                                                                    <span class="float-right">{{$color->name}}</span>
+                                                                </li>
+                                                            @endforeach
 														</ul>
 													</div>
 												</div>
@@ -527,18 +514,12 @@
 															Select Color
 														</span>
 														<ul class="dropdown" style="display: none;">
-															<li data-color="light-pink" data-bg-color="#D8A7A2">
-																<span class="color-box" style="background-color: #D8A7A2;"></span>Light Pink
-															</li>
-															<li data-color="gray-green" data-bg-color="#4C6457">
-																<span class="color-box" style="background-color: #4C6457;"></span>Gray Green
-															</li>
-															<li data-color="dark-gray" data-bg-color="#46454A">
-																<span class="color-box" style="background-color: #46454A;"></span>Dark Gray
-															</li>
-															<li data-color="black" data-bg-color="black">
-																<span class="color-box" style="background-color: black;"></span>Black
-															</li>
+                                                            @foreach ($colors as $color)
+                                                                <li data-color="light-pink" data-bg-color="{{$color->hex_code}}">
+                                                                    <span class="color-box" style="background-color: {{$color->hex_code}};border:solid 1px black"></span>
+                                                                    <span class="float-right">{{$color->name}}</span>
+                                                                </li>
+                                                            @endforeach
 														</ul>
 													</div>
 												</div>
@@ -631,11 +612,22 @@
 						</div>
 						<div class="row">
 							<div class="col-lg-5 col-md-6">
-								<div class="price_main"><span class="new_price">AED 2,995</span>{{-- <span
+								<div class="price_main"><span class="new_price">From  AED {{ $product->price }}</span>{{-- <span
 										class="percentage">-20%</span> <span class="old_price">AED 3,364</span> --}}</div>
 							</div>
 							<div class="col-lg-4 col-md-6" style="margin-top: 8px;">
-								<div class="btn_add_to_cart"><a href="#0" id="add-to-cart" class="btn_1">Add to Cart</a></div>
+								<div class="btn_add_product_to_cart">
+                                    <button type="submit" id="add_to_cart" class="btn_1">Add to Cart</button>
+                                </div>
+
+                                <div style="display: none">
+                                    <img class="product_image" style="display: none" src="{{ Voyager::image($images[0]) }}">
+                                    <span class="product_id" data-id="{{ $product->id ?? '' }}"></span>
+                                    <span class="product_name" data-name="{{$product->name ?? ''}}"></span>
+                                    <span class="product_slug" data-slug="{{$product->slug ?? ''}}"></span>
+                                    <span class="product_price" data-price="{{$product->price ?? ''}}"></span>
+                                </div>
+
 							</div>
 						</div>
 					</div>
@@ -663,6 +655,9 @@
 						<li class="nav-item">
 							<a id="tab-B" href="#pane-B" class="nav-link" data-bs-toggle="tab" role="tab">Spesifications</a>
 						</li>
+                        <li class="nav-item">
+							<a id="tab-C" href="#pane-C" class="nav-link" data-bs-toggle="tab" role="tab">Datasheet or Technical Drawings</a>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -670,6 +665,7 @@
 			<div class="tab_content_wrapper">
 				<div class="container">
 					<div class="tab-content" role="tablist">
+
 						<div id="pane-A" class="card tab-pane fade active show" role="tabpanel" aria-labelledby="tab-A">
 							<div class="card-header" role="tab" id="heading-A">
 								<h5 class="mb-0">
@@ -684,17 +680,7 @@
 									<div class="row justify-content-between">
 										<div class="col-lg-6">
 											<h3>Details</h3>
-											<p>Lorem ipsum dolor sit amet, in eleifend <strong>inimicus elaboraret</strong> his,
-												harum efficiendi mel ne. Sale percipit vituperata ex mel, sea ne essent aeterno
-												sanctus, nam ea laoreet civibus electram. Ea vis eius explicari. Quot iuvaret ad
-												has.</p>
-											<p>Vis ei ipsum conclusionemque. Te enim suscipit recusabo mea, ne vis mazim
-												aliquando, everti insolens at sit. Cu vel modo unum quaestio, in vide dicta has.
-												Ut his laudem explicari adversarium, nisl <strong>laboramus hendrerit</strong>
-												te his, alia lobortis vis ea.</p>
-											<p>Perfecto eleifend sea no, cu audire voluptatibus eam. An alii praesent sit, nobis
-												numquam principes ea eos, cu autem constituto suscipiantur eam. Ex graeci
-												elaboraret pro. Mei te omnis tantas, nobis viderer vivendo ex has.</p>
+											{!! $product->product_description !!}
 										</div>
 										<div class="col-lg-5">
 											<h3>Specifications</h3>
@@ -739,19 +725,16 @@
 							<div id="collapse-B" class="collapse" role="tabpanel" aria-labelledby="heading-B">
 								<div class="card-body">
 									<div class="row justify-content-between">
-										<div class="col-lg-6">
+										<div class="col-lg-12">
 											<div class="review_content">
 												<div class="clearfix add_bottom_10">
-													spacification 1
+													spacifications :
 												</div>
 												<h4>"Commpletely satisfied"</h4>
-												<p>Eos tollit ancillae ea, lorem consulatu qui ne, eu eros eirmod scaevola sea.
-													Et nec tantas accusamus salutatus, sit commodo veritus te, erat legere
-													fabulas has ut. Rebum laudem cum ea, ius essent fuisset ut. Viderer
-													petentium cu his.</p>
+												{!! $product->product_specifications !!}
 											</div>
 										</div>
-										<div class="col-lg-6">
+										{{-- <div class="col-lg-6">
 											<div class="review_content">
 												<div class="clearfix add_bottom_10">
 													spacification 2
@@ -761,7 +744,7 @@
 													fabulas has ut. Rebum laudem cum ea, ius essent fuisset ut. Viderer
 													petentium cu his.</p>
 											</div>
-										</div>
+										</div> --}}
 									</div>
 									<!-- /row -->
 								</div>
@@ -769,6 +752,45 @@
 							</div>
 						</div>
 						<!-- /tab B -->
+
+                        {{-- start tab C --}}
+                        <div id="pane-C" class="card tab-pane fade" role="tabpanel" aria-labelledby="tab-C">
+							<div class="card-header" role="tab" id="heading-C">
+								<h5 class="mb-0">
+									<a class="collapsed" data-bs-toggle="collapse" href="#collapse-C" aria-expanded="false"
+										aria-controls="collapse-C">
+										Description
+									</a>
+								</h5>
+							</div>
+							<div id="collapse-C" class="collapse" role="tabpanel" aria-labelledby="heading-C">
+								<div class="card-body">
+									<div class="row justify-content-between">
+										<div class="col-lg-12">
+											<h3>Datasheet or Technical Drawings</h3>
+                                            <style>
+                                                a.btn_1:hover, .btn_1:hover {
+                                                   color: white !important;
+                                                }
+                                            </style>
+                                            <p>
+                                                @php
+                                                    // Decode the JSON data from the database
+                                                    $pdfData = json_decode($product->product_pdf, true);
+                                                    $pdf_guide_Data = json_decode($product->product_guide, true);
+                                                @endphp
+                                                <span><a href="{{ (!empty($pdfData) && isset($pdfData[0]['download_link'])) ? Storage::url($pdfData[0]['download_link']) : '#' }}" target="_blank" style="background-color: #000;color: white;" class="btn_1"  >Product Pdf description</a></span>
+                                            </p> <br><br>
+
+                                            <p>
+                                                <span><a href="{{ (!empty($pdf_guide_Data) && isset($pdf_guide_Data[0]['download_link'])) ? Storage::url($pdf_guide_Data[0]['download_link']) : '#' }}" target="_blank" style="background-color: #000;color: white;" class="btn_1"  >Product Pdf Guide</a></span>
+                                            </p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                        {{-- end tab C --}}
 					</div>
 					<!-- /tab-content -->
 				</div>

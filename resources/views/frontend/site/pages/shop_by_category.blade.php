@@ -208,17 +208,18 @@
 								<div class="container pl-lg-5">
 									<div class="breadcrumbs">
 										<ul>
-											<li><a href="{{ route('brands') }}">Brands</a></li>
-											<li>Bathroom</li>
+											<li><a href="{{ route('brands') }}">{{ $productSubcategory->parent_category->getTranslatedAttribute('name') }}</a></li>
+											<li>{{ $productSubcategory->getTranslatedAttribute('name') }}</li>
 										</ul>
 									</div>
-									<h1>Bathroom</h1>
+									<h1>{{ $productSubcategory->getTranslatedAttribute('name') }}</h1>
 								</div>
 							</div>
 							<img src="https://capitalbaths.com/wp-content/uploads/2023/11/product-selection-banner02.webp"
 								class="img-fluid" alt="">
 						</div>
 						<!-- /top_banner -->
+
 						<div id="stick_here"></div>
 						<div class="toolbox elemento_stick add_bottom_30">
 							<div class="container">
@@ -237,7 +238,7 @@
 									</li>
 									<li>
 										<a href="#0"><i class="ti-view-grid"></i></a>
-										<a href="{{ route('single_listing_shop') }}"><i class="ti-view-list"></i></a>
+										<a href="#"><i class="ti-view-list"></i></a>
 									</li>
 									<li>
 										<a href="#0" class="open_filters">
@@ -251,7 +252,59 @@
 						<div class="row small-gutters">
 
 							<!-- start  product 1 -->
-							<div class="col-6 col-md-4">
+                            @forelse ($products as $product)
+
+                            <div class="col-6 col-md-4">
+								<div class="grid_item">
+									{{-- <span class="ribbon off">-30%</span> --}}
+									<figure>
+										<a href="{{ route('show_product', ['product_id' => $product->id , 'product_slug' => $product->slug]) }}">
+											<img class="img-fluid lazy" style="height: 284px"
+                                            @php
+                                                $images = json_decode($product->images);
+
+                                                if (isset($images) && count($images) > 0) {
+                                                    $result =  Voyager::image($images[0]);
+                                                } else {
+                                                    $result = asset('assets/img/default-product-image.png');
+                                                }
+
+                                            @endphp
+												src="{{ $result }}"
+												data-src="{{ $result }}"
+												alt="">
+										</a>
+										<div class="color-options my-3">
+											<br>
+										</div>
+									</figure>
+									<a href="{{ route('show_product', ['product_id' => $product->id , 'product_slug' => $product->slug]) }}">
+										<h3 style="text-decoration: none;color: black;">{{ $product->getTranslatedAttribute('name') }}</h3>
+									</a>
+									<div class="price_box  my-3">
+                                        <span class="new_price">{!! $product->pruduct_price() !!}</span>
+										{{-- <span class="new_price">From AED 2,080 to AED 3,900</span> --}}
+										<!-- <span class="new_price">$48.00</span>
+									<span class="old_price">$60.00</span> -->
+									</div>
+									<ul>
+										<li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip"
+												data-bs-placement="left" title="Add to favorites"><i
+													class="ti-heart"></i><span>Add to favorites</span></a></li>
+										<li><a href="#0" class="tooltip-1" data-bs-toggle="tooltip"
+												data-bs-placement="left" title="Add to cart"><i
+													class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
+									</ul>
+								</div>
+							</div>
+
+                            @empty
+                              <div class="container">
+                                  <h5 style="color: #A90034" class="text-center text-danger">There is no product in this category</h3>
+                              </div>
+                            @endforelse
+
+							{{-- <div class="col-6 col-md-4">
 								<div class="grid_item">
 									<span class="ribbon off">-30%</span>
 									<figure>
@@ -282,12 +335,13 @@
 													class="ti-shopping-cart"></i><span>Add to cart</span></a></li>
 									</ul>
 								</div>
-								<!-- /grid_item -->
-							</div>
+							</div> --}}
+
+
 							<!-- end product 1 -->
 
 							<!-- start product 2 -->
-							<div class="col-6 col-md-4">
+							{{-- <div class="col-6 col-md-4">
 								<div class="grid_item">
 									<span class="ribbon off">-30%</span>
 									<figure>
@@ -326,11 +380,11 @@
 									</ul>
 								</div>
 								<!-- /grid_item -->
-							</div>
+							</div> --}}
 							<!-- end product 2 -->
 
 							<!-- start product 3 -->
-							<div class="col-6 col-md-4">
+							{{-- <div class="col-6 col-md-4">
 								<div class="grid_item">
 									<span class="ribbon off">-30%</span>
 									<figure>
@@ -369,13 +423,13 @@
 									</ul>
 								</div>
 								<!-- /grid_item -->
-							</div>
+							</div> --}}
 							<!-- end product 3 -->
 
 							<!-- ********************************** -->
 
-							<!-- start  product 1 -->
-							<div class="col-6 col-md-4">
+							<!-- start  product 4 -->
+							{{-- <div class="col-6 col-md-4">
 								<div class="grid_item">
 									<span class="ribbon off">-30%</span>
 									<figure>
@@ -414,11 +468,11 @@
 									</ul>
 								</div>
 								<!-- /grid_item -->
-							</div>
-							<!-- end product 1 -->
+							</div> --}}
+							<!-- end product 4 -->
 
-							<!-- start product 2 -->
-							<div class="col-6 col-md-4">
+							<!-- start product 5 -->
+							{{-- <div class="col-6 col-md-4">
 								<div class="grid_item">
 									<span class="ribbon off">-30%</span>
 									<figure>
@@ -457,11 +511,11 @@
 									</ul>
 								</div>
 								<!-- /grid_item -->
-							</div>
-							<!-- end product 2 -->
+							</div> --}}
+							<!-- end product 5 -->
 
-							<!-- start product 3 -->
-							<div class="col-6 col-md-4">
+							<!-- start product 6 -->
+							{{-- <div class="col-6 col-md-4">
 								<div class="grid_item">
 									<span class="ribbon off">-30%</span>
 									<figure>
@@ -500,8 +554,8 @@
 									</ul>
 								</div>
 								<!-- /grid_item -->
-							</div>
-							<!-- end product 3 -->
+							</div> --}}
+							<!-- end product 6 -->
 
 
 
@@ -515,20 +569,7 @@
 						<!-- start pagination -->
 						<div class="pagination__wrapper">
 							<ul class="pagination">
-								<li><a href="#0" class="prev" title="previous page">&#10094;</a></li>
-								<li>
-									<a href="#0" class="active">1</a>
-								</li>
-								<li>
-									<a href="#0">2</a>
-								</li>
-								<li>
-									<a href="#0">3</a>
-								</li>
-								<li>
-									<a href="#0">4</a>
-								</li>
-								<li><a href="#0" class="next" title="next page">&#10095;</a></li>
+                                {{ $products->links('pagination::bootstrap-4') }}
 							</ul>
 						</div>
 						<!-- end pagination -->

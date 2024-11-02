@@ -14,4 +14,9 @@ class Childrenscategory extends Model
 
     protected $guarded = [];
 
+    // relashionship between Childrens category and Product SubCategory
+    public function parent_category(){
+        return $this->belongsTo(Productsubcategory::class);
+    }
+
 }

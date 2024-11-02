@@ -52,4 +52,7 @@ return [
     "viwe_project" => "View The Project",
     "latest_project" => "Latest Projects",
     "project_desc" => "Residential, Hospitality, Commercial, Institutional & more.",
+
+    "project_gallery" => "Project Gallery",
 ];
+

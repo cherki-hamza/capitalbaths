@@ -7612,4 +7612,16 @@ screen and (max-height: 300px) {
     max-width: 1500px;
 }
 
+/* applay in desktop */
+.en_lang_responsive_position{
+
 }
+
+/*  applay in mobile */
+@media only screen and (max-width: 768px) {
+    .en_lang_responsive_position{
+        margin-right: -26px !important;
+    }
+}
+
+

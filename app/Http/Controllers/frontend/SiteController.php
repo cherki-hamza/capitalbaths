@@ -4,11 +4,13 @@ namespace App\Http\Controllers\frontend;
 
 use App\Brand;
 use App\Colection;
+use App\Color;
 use App\Contact;
 use App\Http\Controllers\Controller;
 use App\Instagram;
 use App\Mail\ContactEmail;
 use App\Models\About;
+use App\Product;
 use App\Productcategory;
 use App\Productsubcategory;
 use App\Project;
@@ -102,6 +104,44 @@ class SiteController extends Controller
         return view('frontend.site.pages.category_products' , compact('subcategories','category'));
     }
 
+    // method for get the shop products by category and subcategory
+    public function shop_by_category(Request $request){
+
+        // get the categoy and childrens categories
+        $productSubcategory = Productsubcategory::where('slug', $request->category_slug)
+                    ->with('translations', 'parent_category')
+                    ->first();
+
+        // get the products of the category from url slug
+        $products = Product::where('productSubcategory_id',$productSubcategory->id)->with( 'translations','category','subcategory',)->paginate(12);
+
+        return view('frontend.site.pages.shop_by_category',compact('productSubcategory','products'));
+    }
+
+    // method for get the shop products by category and subcategory by one row
+    public function shop_by_category_row(Request $request){
+
+        // get the categoy and childrens categories
+        $productSubcategory = Productsubcategory::where('slug', $request->category_slug)
+                    ->with('translations', 'parent_category')
+                    ->first();
+
+        // get the products of the category from url slug
+        $products = Product::where('productSubcategory_id',$productSubcategory->id)->with( 'translations','category','subcategory',)->paginate(12);
+
+        return view('frontend.site.pages.shop_single_list',compact('productSubcategory','products'));
+    }
+
+    // method for show product by id
+    public function show_product(Request $request){
+     $product = Product::where('id',$request->product_id)->with( 'translations','category','subcategory',)->first();
+
+     //return $product;
+     //return $product;
+     $colors = Color::all();
+     return view('frontend.site.product.custom_product_details',compact('colors','product'));
+    }
+
     // method for shop page
     public function shop(){
         return view('frontend.site.pages.shop');
@@ -121,12 +161,14 @@ class SiteController extends Controller
 
     // method for normal_product_detail
     public function normal_product_detail(Request $request){
-        return view('frontend.site.product.single_product_details');
+        $colors = Color::all();
+        return view('frontend.site.product.single_product_details',compact('colors'));
     }
 
     // method for custom_product_detail
     public function custom_product_detail(Request $request){
-        return view('frontend.site.product.custom_product_details');
+        $colors = Color::all();
+        return view('frontend.site.product.custom_product_details',compact('colors'));
     }
 
 

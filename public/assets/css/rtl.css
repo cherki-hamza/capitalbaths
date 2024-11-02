@@ -57,7 +57,7 @@ header .main_nav .custom-search-input button[type='submit'] {
     }
 
     .lang_position{
-        margin-left: 168px
+        margin-left: 175px
     }
 
   }
@@ -81,10 +81,5 @@ header .main_nav .custom-search-input button[type='submit'] {
 
 /* start menu responsive */
 
-@media (max-width: 800px) {
-.en_lang_position{
-    margin-left: -25px;
-}
-}
 
 

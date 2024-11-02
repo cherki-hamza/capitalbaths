@@ -2,6 +2,15 @@
 
 @section('title','Capitalbaths')
 
+@section('style')
+  <style>
+      /* .header-video{
+        height: 244px !important;
+        width: 488px;
+      } */
+  </style>
+@endsection
+
 
 @section('content')
 	<!-- start header top -->

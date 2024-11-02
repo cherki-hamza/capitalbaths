@@ -53,10 +53,10 @@
                     @forelse ($subcategories as $subcategory)
                     <div class="col-md-3 col-sm-6 col-12 mb-4">
                         <div class="category-card">
-                            <a href="{{ route('shop') }}">
+                            <a href="{{ route('shop_by_category' , [ 'category_id'=> $category->id ,'category_name'=> $category->name , 'category_slug' => $subcategory->slug ]) }}">
                                 <img style="width: 400px;height: 400px;" src="{{ Voyager::image($subcategory->image)  }}" alt="{{ $subcategory->getTranslatedAttribute('name') }}">
                             </a>
-                            <button class="btn_shop  mt-4"><a style="color: inherit;text-decoration: none;" href="{{ route('shop') }}">{{ $subcategory->getTranslatedAttribute('name') }}</a></button>
+                            <button class="btn_shop  mt-4"><a style="color: inherit;text-decoration: none;" href="{{ route('shop_by_category' , ['category_id'=> $category->id ,'category_name'=> $category->name , 'category_slug' => $subcategory->slug ]) }}">{{ $subcategory->getTranslatedAttribute('name') }}</a></button>
                         </div>
                     </div>
                     @empty

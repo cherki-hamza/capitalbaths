@@ -180,7 +180,7 @@
                                 <div class="product-card__info">
                                     <h3 class="product-card__title">{{ $project->getTranslatedAttribute('project_name') }}</h3>
                                     <div class="product-card__price-row">
-                                        <a href="{{ route('subprojects' , $project->project_slug) }}" style="text-decoration: none;color: white;" class="product-card__price product-card__btn">{{ __('site.view_all_projects') }}</a>
+                                        <a href="{{ route('subprojects' , $project->project_slug) }}" style="text-decoration: none;color: white;" class="product-card__price product-card__btn">{{ __('site.viwe_all_projects') }}</a>
                                     </div>
                                 </div>
                             </div>

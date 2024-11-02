@@ -1,5 +1,5 @@
 
-@if (Route::is('custom_product_detail'))
+@if (Route::is('show_product'))
    @include('frontend.layouts.product_header')
 @elseif (Route::is('normal_product_detail'))
     @include('frontend.layouts.product_header')

@@ -17,8 +17,13 @@ class Productsubcategory extends Model
 
 
     // relashionship between product subcategory and product category
-    public function paren_category(){
-        return $this->belongsTo(Productcategory::class);
+    public function parent_category(){
+        return $this->belongsTo(Productcategory::class,'productcategory_id' , 'id');
+    }
+
+    // relashionship between product subcategory and product Childrens categories
+    public function childrens_categories(){
+        return $this->hasMany(Childrenscategory::class);
     }
 
 

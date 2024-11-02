@@ -35,7 +35,7 @@
             float: right !important;
             z-index: 99;
             right: 50px;
-            bottom: 60px;
+            bottom: 110px;
         }
 
     </style>
@@ -88,7 +88,6 @@
                             @endphp
 
                             @foreach ($dataTypeRows as $row)
-
                                 <!-- GET THE DISPLAY OPTIONS -->
                                 @php
                                     $display_options = $row->details->display ?? null;
@@ -109,10 +108,6 @@
                                         for="name">{{ $row->getTranslatedAttribute('display_name') }}</label><span
                                         class="mx-2" style="color:#0799e7;font-weight: bold;">:</span>
                                     @include('voyager::multilingual.input-hidden-bread-edit-add')
-                                        @if ($row->field == 'sub_project_gallery_images')
-                                           <span style="color: rgba(234, 9, 9, 0.543)"> (Max Images 10 & min images : 6):</span>
-                                        @endif
-                                    </label>
                                     @if ($add && isset($row->details->view_add))
                                         @include($row->details->view_add, [
                                             'row' => $row,
@@ -289,26 +284,6 @@
         });
         $('[data-toggle="tooltip"]').tooltip();
     });
-</script>
-
-<script>
-    // JavaScript to update the label text on page load
-    window.onload = function() {
-        // Get all label elements
-        const labels = document.querySelectorAll('label');
-
-        console.log(labels);
-
-
-        // Iterate through the labels to find the one with the specific text
-        for (let label of labels) {
-            if (label.textContent === 'Sub Project Gallery Images:') {
-                // Update the text
-                label.textContent += ' Updated with more details.';
-                break; // Exit loop once found
-            }
-        }
-    };
 </script>
 
 

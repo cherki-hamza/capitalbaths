@@ -111,9 +111,9 @@
                             <div class="row g-4">
 
                                 @php
-                            // Decode the JSON string into an associative array
-                            $videos = json_decode($showroom->showroom_instagram_videos, true); // true forces associative array
-                        @endphp
+                                    // Decode the JSON string into an associative array
+                                    $videos = json_decode($showroom->showroom_instagram_videos, true); // true forces associative array
+                                @endphp
 
                             @foreach ($videos as $video)
                                 <div class="col-md-3">

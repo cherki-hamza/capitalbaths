@@ -1,6 +1,6 @@
 @if (LaravelLocalization::getCurrentLocale() == 'ar')
 
-<div  style="height: 20px;margin-top: 5px;max-width: 1500px;" class="container-fluid">
+<div  style="height: 20px;margin-top: 5px;max-width: 1437px;" class="container-fluid">
     <div class="row col-12">
 
         <div class="col-12">
@@ -59,7 +59,7 @@
             <a style="text-decoration: none;color: black;" href="#"><span style="margin-inline: 5px;"><img
                         style="width: 25px;height: 25px;" src="{{ asset('assets/img/watsup.svg') }}" alt=""></span><span
                     class="capithalbaths_responsive"> +971 045762781 </span></a>
-            <div style="float: right;margin-right: 77px;" class="">
+            <div style="float: right;margin-right: 71px;" class="en_lang_responsive_position">
 
                 @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                     <span>

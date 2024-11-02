@@ -10,7 +10,7 @@ class Subproject extends Model
 
     use Translatable;
     protected $translatable = [
-       'sub_project_name'
+       'sub_project_name','sub_project_description'
     ];
 
     protected $guarded = [];

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\frontend\SiteController;
+use App\Http\Controllers\frontend\UserController;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Facades\Voyager;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -50,14 +51,20 @@ Route::group(
         // route for shop page
         Route::get('/shop' , [SiteController::class,'shop'])->name('shop');
 
+         // route for shop by category and subcategory
+         Route::get('/category/{category_id?}/{category_name?}/{category_slug?}' , [SiteController::class,'shop_by_category'])->name('shop_by_category');
+
         // route for shop by brand
         Route::get('/brand/{brand_name}' , [SiteController::class,'brand_shop'])->name('brand_shop');
 
         // route for single listing shop page
         Route::get('/single_listing_shop' , [SiteController::class,'single_listing_shop'])->name('single_listing_shop');
 
+        // custom_product_detail
+        Route::get('/row/category/{category_id}/{category_name?}/{category_slug}' , [SiteController::class,'shop_by_category_row'])->name('shop_by_category_row');
+
         // route for normal product detail
-        Route::get('/shop/product/normal_details' , [SiteController::class,'normal_product_detail'])->name('normal_product_detail');
+        Route::get('/shop/product/{product_id}/{product_slug?}' , [SiteController::class,'show_product'])->name('show_product');
         // route for custom product detail
         Route::get('/shop/product/custom_details' , [SiteController::class,'custom_product_detail'])->name('custom_product_detail');
 
@@ -75,6 +82,13 @@ Route::group(
 
         // route for store contacts
         Route::post('/contact_store', [SiteController::class, 'contact_store'])->name('contact_store');
+
+        // route for register new client
+        Route::post('/users/register_client', [UserController::class, 'register_client'])->name('register_client');
+
+        // route for login new client
+        Route::post('/users/login_client', [UserController::class, 'login_client'])->name('login_client');
+
 
         }
     );

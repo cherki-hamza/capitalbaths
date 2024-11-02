@@ -43,12 +43,11 @@
                     <div class="container">
                         <div class="breadcrumbs">
                             <ul>
-                                <li><a href="#">Shop</a></li>
-                                            <li><a href="#">Category</a></li>
-                                            <li>Bathroom</li>
+                                <li><a href="{{ route('brands') }}">{{ $productSubcategory->parent_category->getTranslatedAttribute('name') }}</a></li>
+                                <li>{{ $productSubcategory->getTranslatedAttribute('name') }}</li>
                             </ul>
                         </div>
-                        <h1>Bathroom</h1>
+                        <h1>{{ $productSubcategory->getTranslatedAttribute('name') }}</h1>
                     </div>
                 </div>
                 <img src="https://capitalbaths.com/wp-content/uploads/2023/11/product-selection-banner02.webp" class="img-fluid" alt="">
@@ -70,7 +69,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="{{ route('shop') }}"><i class="ti-view-grid"></i></a>
+                            <a href=""><i class="ti-view-grid"></i></a>
                             <a href="#0"><i class="ti-view-list"></i></a>
                         </li>
                         <li>
@@ -84,6 +83,7 @@
             <!-- /toolbox -->
             <div class="container margin_30">
                 <div class="row">
+
                     <aside class="col-lg-3" id="sidebar_fixed">
                         <div class="filter_col">
                             <div class="inner_bt"><a href="#" class="open_filters"><i class="ti-close"></i></a></div>
@@ -243,12 +243,16 @@
                     <div class="col-lg-9">
 
                         <!-- start product 1 -->
+                        @foreach ($products as $product)
                         <div class="row row_item">
                             <div class="col-sm-4">
+                                @php
+                                  $images = json_decode($product->images);
+                                @endphp
                                 <figure>
                                     <span class="ribbon off">-30%</span>
                                     <a href="{{ route('normal_product_detail') }}">
-                                        <img class="img-fluid lazy" src="https://capitalbaths.com/wp-content/uploads/2023/11/toilet-cat01.webp" data-src="https://capitalbaths.com/wp-content/uploads/2023/11/toilet-cat01.webp" alt="">
+                                        <img class="img-fluid lazy" src="{{ Voyager::image($images[0]) }}" data-src="{{ Voyager::image($images[0]) }}" alt="">
                                     </a>
                                     <div class="color-options">
                                         <div class="color-options">
@@ -264,9 +268,9 @@
                             <div class="col-sm-8">
                                 <div class="rating"></div>
                                 <a href="{{ route('normal_product_detail') }}">
-                                    <h3 style="text-decoration: none;color: black;">M-Line Back to Wall Rimless WC</h3>
+                                    <h3 style="text-decoration: none;color: black;">{{ $product->getTranslatedAttribute('name') }}</h3>
                                 </a>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident...</p>
+                                <p>{{ $product->getTranslatedAttribute('description') }}</p>
                                 <div class="price_box">
                                     <span class="new_price">From AED 2,080 to AED 3,900</span>
                                 </div>
@@ -276,188 +280,9 @@
                                 </ul>
                             </div>
                         </div>
+                        @endforeach
+
                         <!-- end product 1 -->
-
-                        <!-- start product 2 -->
-                        <div class="row row_item">
-                            <div class="col-sm-4">
-                                <figure>
-                                    <span class="ribbon off">-30%</span>
-                                    <a href="{{ route('normal_product_detail') }}">
-                                        <img class="img-fluid lazy" src="https://capitalbaths.com/wp-content/uploads/2023/11/toilet-cat01.webp" data-src="https://capitalbaths.com/wp-content/uploads/2023/11/toilet-cat01.webp" alt="">
-                                    </a>
-                                    <div class="color-options">
-                                        <div class="color-options">
-                                            <div class="color-circle" style="background-color: #004AAD;"></div>
-                                            <div class="color-circle" style="background-color: #A90034;"></div>
-                                            <div class="color-circle" style="background-color: #FFD700;"></div>
-                                            <div class="color-circle" style="background-color: white;"></div>
-                                            <div class="color-circle" style="background-color: black;"></div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </div>
-                            <div class="col-sm-8">
-                                <div class="rating"></div>
-                                <a href="{{ route('normal_product_detail') }}">
-                                    <h3 style="text-decoration: none;color: black;">M-Line Back to Wall Rimless WC</h3>
-                                </a>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident...</p>
-                                <div class="price_box">
-                                    <span class="new_price">From AED 2,080 to AED 3,900</span>
-                                </div>
-                                <ul>
-                                    <li><a href="#0" class="btn_1">Add to cart</a></li>
-                                    <li><a href="#0" class="btn_1 gray tooltip-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- start product 2 -->
-
-                        <!-- start product 3 -->
-                        <div class="row row_item">
-                            <div class="col-sm-4">
-                                <figure>
-                                    <span class="ribbon off">-30%</span>
-                                    <a href="{{ route('normal_product_detail') }}">
-                                        <img class="img-fluid lazy" src="https://capitalbaths.com/wp-content/uploads/2023/11/toilet-cat01.webp" data-src="https://capitalbaths.com/wp-content/uploads/2023/11/toilet-cat01.webp" alt="">
-                                    </a>
-                                    <div class="color-options">
-                                        <div class="color-options">
-                                            <div class="color-circle" style="background-color: #004AAD;"></div>
-                                            <div class="color-circle" style="background-color: #A90034;"></div>
-                                            <div class="color-circle" style="background-color: #FFD700;"></div>
-                                            <div class="color-circle" style="background-color: white;"></div>
-                                            <div class="color-circle" style="background-color: black;"></div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </div>
-                            <div class="col-sm-8">
-                                <div class="rating"></div>
-                                <a href="{{ route('normal_product_detail') }}">
-                                    <h3 style="text-decoration: none;color: black;">M-Line Back to Wall Rimless WC</h3>
-                                </a>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident...</p>
-                                <div class="price_box">
-                                    <span class="new_price">From AED 2,080 to AED 3,900</span>
-                                </div>
-                                <ul>
-                                    <li><a href="#0" class="btn_1">Add to cart</a></li>
-                                    <li><a href="#0" class="btn_1 gray tooltip-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- start product 3 -->
-
-                        <!-- start product 4 -->
-                        <div class="row row_item">
-                            <div class="col-sm-4">
-                                <figure>
-                                    <span class="ribbon off">-30%</span>
-                                    <a href="{{ route('normal_product_detail') }}">
-                                        <img class="img-fluid lazy" src="https://capitalbaths.com/wp-content/uploads/2023/11/toilet-cat01.webp" data-src="https://capitalbaths.com/wp-content/uploads/2023/11/toilet-cat01.webp" alt="">
-                                    </a>
-                                    <div class="color-options">
-                                        <div class="color-options">
-                                            <div class="color-circle" style="background-color: #004AAD;"></div>
-                                            <div class="color-circle" style="background-color: #A90034;"></div>
-                                            <div class="color-circle" style="background-color: #FFD700;"></div>
-                                            <div class="color-circle" style="background-color: white;"></div>
-                                            <div class="color-circle" style="background-color: black;"></div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </div>
-                            <div class="col-sm-8">
-                                <div class="rating"></div>
-                                <a href="{{ route('normal_product_detail') }}">
-                                    <h3 style="text-decoration: none;color: black;">M-Line Back to Wall Rimless WC</h3>
-                                </a>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident...</p>
-                                <div class="price_box">
-                                    <span class="new_price">From AED 2,080 to AED 3,900</span>
-                                </div>
-                                <ul>
-                                    <li><a href="#0" class="btn_1">Add to cart</a></li>
-                                    <li><a href="#0" class="btn_1 gray tooltip-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- start product 4 -->
-
-                        <!-- start product 5 -->
-                        <div class="row row_item">
-                            <div class="col-sm-4">
-                                <figure>
-                                    <span class="ribbon off">-30%</span>
-                                    <a href="{{ route('normal_product_detail') }}">
-                                        <img class="img-fluid lazy" src="https://capitalbaths.com/wp-content/uploads/2023/11/toilet-cat01.webp" data-src="https://capitalbaths.com/wp-content/uploads/2023/11/toilet-cat01.webp" alt="">
-                                    </a>
-                                    <div class="color-options">
-                                        <div class="color-options">
-                                            <div class="color-circle" style="background-color: #004AAD;"></div>
-                                            <div class="color-circle" style="background-color: #A90034;"></div>
-                                            <div class="color-circle" style="background-color: #FFD700;"></div>
-                                            <div class="color-circle" style="background-color: white;"></div>
-                                            <div class="color-circle" style="background-color: black;"></div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </div>
-                            <div class="col-sm-8">
-                                <div class="rating"></div>
-                                <a href="{{ route('normal_product_detail') }}">
-                                    <h3 style="text-decoration: none;color: black;">M-Line Back to Wall Rimless WC</h3>
-                                </a>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident...</p>
-                                <div class="price_box">
-                                    <span class="new_price">From AED 2,080 to AED 3,900</span>
-                                </div>
-                                <ul>
-                                    <li><a href="#0" class="btn_1">Add to cart</a></li>
-                                    <li><a href="#0" class="btn_1 gray tooltip-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- start product 5 -->
-
-                        <!-- start product 6 -->
-                        <div class="row row_item">
-                            <div class="col-sm-4">
-                                <figure>
-                                    <span class="ribbon off">-30%</span>
-                                    <a href="{{ route('normal_product_detail') }}">
-                                        <img class="img-fluid lazy" src="https://capitalbaths.com/wp-content/uploads/2023/11/toilet-cat01.webp" data-src="https://capitalbaths.com/wp-content/uploads/2023/11/toilet-cat01.webp" alt="">
-                                    </a>
-                                    <div class="color-options">
-                                        <div class="color-options">
-                                            <div class="color-circle" style="background-color: #004AAD;"></div>
-                                            <div class="color-circle" style="background-color: #A90034;"></div>
-                                            <div class="color-circle" style="background-color: #FFD700;"></div>
-                                            <div class="color-circle" style="background-color: white;"></div>
-                                            <div class="color-circle" style="background-color: black;"></div>
-                                        </div>
-                                    </div>
-                                </figure>
-                            </div>
-                            <div class="col-sm-8">
-                                <div class="rating"></div>
-                                <a href="{{ route('normal_product_detail') }}">
-                                    <h3 style="text-decoration: none;color: black;">M-Line Back to Wall Rimless WC</h3>
-                                </a>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident...</p>
-                                <div class="price_box">
-                                    <span class="new_price">From AED 2,080 to AED 3,900</span>
-                                </div>
-                                <ul>
-                                    <li><a href="#0" class="btn_1">Add to cart</a></li>
-                                    <li><a href="#0" class="btn_1 gray tooltip-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Add to favorites"><i class="ti-heart"></i><span>Add to favorites</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- start product 6 -->
-
 
                     </div>
                     <!-- /col -->

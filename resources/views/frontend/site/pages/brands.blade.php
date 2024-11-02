@@ -26,20 +26,20 @@
 			<div class="container my-4">
                 <div class="container brand-section">
 					<div class="row gy-4">
-                        @foreach ($brands as $brand)
-						<div class="col-6 col-md-3">
-							<a href="{{ route('brand_shop',['brand_name'=> $brand->slug]) }}">
-							<div class="card brand-card">
-                                 <a href="{{ route('brand_shop', ['brand_name'=> $brand->slug]) }}">
-                                    <img src="{{ Voyager::image($brand->image)  }}" alt="{{ $brand->getTranslatedAttribute('name') }}">
-                                    <div class="card-body text-center">
-                                        <p class="card-text brand_no_color">{{ $brand->getTranslatedAttribute('name') }}</p>
-                                    </div>
-                                </a>
-							</div>
-						   	</a>
-						</div>
-                        @endforeach
+                        {{-- start brand --}}
+                    @foreach ($brands as $brand)
+                    <div  class="col-6 col-3 col-md-3 my-2">
+                        <div class="card m-3 m-auto bg-dark text-white">
+                            <a href="{{ route('brand_shop',['brand_name'=> $brand->slug]) }}">
+                              <img style="height: 300px" src="{{ Voyager::image($brand->image)  }}" class="card-img-top" alt="{{ $brand->getTranslatedAttribute('name') }}">
+                            </a>
+                            <div class="card-body">
+                                <a style="font-size: 20px" href="{{ route('brand_shop',['brand_name'=> $brand->slug]) }}" class="card-title h5 mt-1 mb-3 d-block text-center text-white">{{ $brand->getTranslatedAttribute('name') }}</a>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    {{-- end brand --}}
 
 					</div>
 				</div>

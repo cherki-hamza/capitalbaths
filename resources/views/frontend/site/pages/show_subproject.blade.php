@@ -39,15 +39,14 @@
                                 <div class="row justify-content-center gx-auto gx-xl-5">
                                     <div class="col-lg-4 order-2 mt-5 mt-lg-0 order-lg-1 my-auto">
                                         <div class="beverly-content">
-                                            <h2>{{ $subproject->project->project_name }}</h2>
-                                            <h4>{{ $subproject->sub_project_name }}</h4>
-                                            <p>Every detail has been carefully crafted at One Beverly to fit how you want to live. Unwind by the pool, work out in the open-air gym, or simply enjoy a quiet evening at home. This is where you can truly relax and feel at ease.</p>
-                                            <p>With high-end finishes, smart home features, and breathtaking views, it’s more than just a home, this is a space made for living well.</p>
+                                            <h2>{{ $subproject->getTranslatedAttribute('project->project_name') }}</h2>
+                                            <h4>{{ $subproject->getTranslatedAttribute('sub_project_name') }}</h4>
+                                           {!! $subproject->getTranslatedAttribute('sub_project_description') !!}
                                         </div>
                                     </div>
                                     <div class="col-md-8 order-1 order-lg-2">
                                         <div class="beverly-images">
-                                            <img style="width: 924px;height: 520px;border-radius: 2%" src="https://capitalbaths.com/wp-content/uploads/2023/11/product-selection-banner02.webp" alt="">
+                                            <img style="width: 924px;height: 520px;border-radius: 2%" src="{{ Voyager::image($subproject->sub_project_image)  }}" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -59,40 +58,47 @@
                         <section class="elegence-area mt-0">
                             <div class="container text-center">
                                 <div class="elegence-wapper">
-                                    <h2>Project Gallery</h2>
-                                    <p>{{ $subproject->sub_project_name }}</p>
+                                    <h2>{{ __('site.project_gallery') }}</h2>
+                                    <p>{{ $subproject->getTranslatedAttribute('sub_project_name') }}</p>
                                 </div>
                             </div>
                             <div class="elegence-gallery-box">
+
+                                @php
+                                    // Decode the JSON string into an associative array
+                                    $images = json_decode($subproject->sub_project_gallery_images, true); // true forces associative array
+
+                                    $imageCount = count($images);
+                                @endphp
 
                                 <div class="row g-0 gx-md-3">
 
                                     <div class="col-lg-4 col-md-6 d-none d-md-block">
                                         <div class="gallery-imges">
-                                            <a href="https://capitalbaths.com/wp-content/uploads/2023/11/product-selection-banner02.webp"
+                                            <a href="{{ Voyager::image($images[0]) }}"
                                                 data-fancybox="gallery">
-                                                <img src="https://capitalbaths.com/wp-content/uploads/2023/11/product-selection-banner02.webp"
+                                                <img src="{{ Voyager::image($images[0]) }}"
                                                     alt="">
                                             </a>
                                         </div>
                                         <div class="gallery-imges pt-3">
-                                            <a href="https://capitalbaths.com/wp-content/uploads/2023/11/bathroom-solution-banner03.webp"
+                                            <a href="{{ Voyager::image($images[1]) }}"
                                                 data-fancybox="gallery">
-                                                <img src="https://capitalbaths.com/wp-content/uploads/2023/11/bathroom-solution-banner03.webp"
+                                                <img src="{{ Voyager::image($images[1]) }}"
                                                     alt="">
                                             </a>
                                         </div>
                                         <div class="gallery-imges pt-3">
-                                            <a href="https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit51.jpg"
+                                            <a href="{{ Voyager::image($images[2]) }}"
                                                 data-fancybox="gallery">
-                                                <img src="https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit51.jpg"
+                                                <img src="{{ Voyager::image($images[2]) }}"
                                                     alt="">
                                             </a>
                                         </div>
                                         <div class="gallery-imges pt-3">
-                                            <a href="https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit32-1.jpg"
+                                            <a href="{{ Voyager::image($images[3]) }}"
                                                 data-fancybox="gallery">
-                                                <img src="https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit32-1.jpg"
+                                                <img src="{{ Voyager::image($images[3]) }}"
                                                     alt="">
                                             </a>
                                         </div>
@@ -100,37 +106,37 @@
 
                                     <div class="col-lg-4 pt-3  col-md-6 pt-md-0">
                                         <div class="gallery-imges">
-                                            <a href="{{ asset('assets/images/gallery-images/gallery-img-5.png') }}"
+                                            <a href="{{ Voyager::image($images[4]) }}"
                                                 data-fancybox="gallery">
-                                                <img src="{{ asset('assets/images/gallery-images/gallery-img-5.png') }}"
+                                                <img src="{{ Voyager::image($images[4]) }}"
                                                     alt="">
                                             </a>
                                         </div>
                                         <div class="gallery-imges pt-3">
-                                            <a href="{{ asset('assets/images/gallery-images/gallery-img-6.png') }}"
+                                            <a href="{{ Voyager::image($images[5]) }}"
                                                 data-fancybox="gallery">
-                                                <img src="{{ asset('assets/images/gallery-images/gallery-img-6.png') }}"
+                                                <img src="{{ Voyager::image($images[5]) }}"
                                                     alt="">
                                             </a>
                                         </div>
                                         <div class="gallery-imges pt-3">
-                                            <a href="https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit19.jpg"
+                                            <a href="{{ Voyager::image($images[6]) }}"
                                                 data-fancybox="gallery">
-                                                <img src="https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit19.jpg"
+                                                <img src="{{ Voyager::image($images[6]) }}"
                                                     alt="">
                                             </a>
                                         </div>
                                         <div class="gallery-imges pt-3">
-                                            <a href="https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit51.jpg"
+                                            <a href="{{ Voyager::image($images[7]) }}"
                                                 data-fancybox="gallery">
-                                                <img src="https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit51.jpg"
+                                                <img src="{{ Voyager::image($images[7]) }}"
                                                     alt="">
                                             </a>
                                         </div>
                                         <div class="gallery-imges pt-3">
-                                            <a href="https://capitalbaths.com/wp-content/uploads/2023/11/product-selection-banner02.webp"
+                                            <a href="{{ Voyager::image($images[8]) }}"
                                                 data-fancybox="gallery">
-                                                <img src="https://capitalbaths.com/wp-content/uploads/2023/11/product-selection-banner02.webp"
+                                                <img src="{{ Voyager::image($images[8]) }}"
                                                     alt="">
                                             </a>
                                         </div>
@@ -138,30 +144,31 @@
 
                                     <div class="col-lg-4 pt-3 d-none d-lg-block pt-lg-0">
                                         <div class="gallery-imges">
-                                            <a href="https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit29.jpg"
+                                            <a href="{{ Voyager::image($images[9]) }}"
                                                 data-fancybox="gallery">
-                                                <img src="https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit29.jpg"
+                                                <img src="{{ Voyager::image($images[9]) }}"
+                                                    alt="">
+                                            </a>
+                                        </div>
+
+                                        <div class="gallery-imges pt-3">
+                                            <a href="{{ Voyager::image($images[10]) }}"
+                                                data-fancybox="gallery">
+                                                <img src="{{ Voyager::image($images[10]) }}"
                                                     alt="">
                                             </a>
                                         </div>
                                         <div class="gallery-imges pt-3">
-                                            <a href="https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit22-1.jpg"
+                                            <a href="{{ Voyager::image($images[11]) }}"
                                                 data-fancybox="gallery">
-                                                <img src="https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit22-1.jpg"
+                                                <img src="{{ Voyager::image($images[11]) }}"
                                                     alt="">
                                             </a>
                                         </div>
                                         <div class="gallery-imges pt-3">
-                                            <a href="https://capitalbaths.com/wp-content/uploads/2023/11/bathroom-solution-banner01.webp"
+                                            <a href="{{ Voyager::image($images[12]) }}"
                                                 data-fancybox="gallery">
-                                                <img src="https://capitalbaths.com/wp-content/uploads/2023/11/bathroom-solution-banner01.webp"
-                                                    alt="">
-                                            </a>
-                                        </div>
-                                        <div class="gallery-imges pt-3">
-                                            <a href="https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit44.jpg"
-                                                data-fancybox="gallery">
-                                                <img src="https://capitalbaths.com/wp-content/uploads/2023/11/vanity-unit44.jpg"
+                                                <img src="{{ Voyager::image($images[12]) }}"
                                                     alt="">
                                             </a>
                                         </div>
